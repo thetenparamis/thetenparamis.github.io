@@ -1,5 +1,5 @@
 # HTML Email Creator
-
+This project is based on the [react-email-editor project](https://github.com/unlayer/react-email-editor)
 ## Basic workflows
 
 ### Preconditions
