@@ -66,7 +66,6 @@ const Bar = styled.div`
 
 class App extends Component {
 
-
   render() {
     return (
       <Router>
@@ -76,10 +75,11 @@ class App extends Component {
           <Bar>
             <h1>HTML Email Creator</h1>
 
-            <label htmlFor="load">Load Template: </label>
+            <label htmlFor="load">Cargar Plantilla: </label>
             <input type="file" onChange={(e) => this.loadFile(e)} name="load" id="load"/>
-            <button onClick={this.saveDesign}>Save Design</button>
-            <button onClick={this.exportHtml}>Export HTML</button>
+            
+            <button onClick={this.saveDesign}>Descargar Plantilla</button>
+            <button onClick={this.exportHtml}>Exportar HTML</button>
           </Bar>
 
           <EmailEditor ref={editor => this.editor = editor} onLoad={this.onLoad}/>
@@ -89,18 +89,12 @@ class App extends Component {
   }
 
   onLoad = () => {
-    //const json = /* DESIGN JSON GOES HERE */
     this.editor.loadDesign(template)
   }
 
   exportHtml = () => {
     this.editor.exportHtml(data => {
       const { design, html } = data
-      //console.log('exportHtml', html)
-      //window.open().document.write(html)
-
-
-
       const element = document.createElement("a");
       const file = new Blob([html], {type: 'html/plain'});
       element.href = URL.createObjectURL(file);
