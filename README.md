@@ -36,3 +36,4 @@ npm run deploy
 - [Deploying React apps to GitHub Pages](https://blog.logrocket.com/deploying-react-apps-github-pages/#what-is-github-pages)
 - [Guía para usar Github-Pages](https://platzi.com/tutoriales/1548-react-2019/4065-guia-para-usar-github-pages-en-tus-proyectos-de-reactjs/)
 - [How to install Node.js and npm on macOS](https://www.newline.co/@Adele/how-to-install-nodejs-and-npm-on-macos--22782681)
+- [App's favicon and logo](https://icons8.com/icons/set/newsletter)
