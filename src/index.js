@@ -82,7 +82,7 @@ class App extends Component {
             <button onClick={this.exportHtml}>Exportar HTML</button>
           </Bar>
 
-          <EmailEditor ref={editor => this.editor = editor} onLoad={this.onLoad}/>
+          <EmailEditor ref={editor => this.editor = editor} onLoad={this.onLoad} locale="es-ES"/>
         </Container>
       </Router>
     );
