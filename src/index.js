@@ -82,10 +82,15 @@ class App extends Component {
             <button onClick={this.exportHtml}>Export HTML</button>
           </Bar>
 
-          <EmailEditor ref={editor => this.editor = editor}/>
+          <EmailEditor ref={editor => this.editor = editor} onLoad={this.onLoad}/>
         </Container>
       </Router>
     );
+  }
+
+  onLoad = () => {
+    //const json = /* DESIGN JSON GOES HERE */
+    this.editor.loadDesign(template)
   }
 
   exportHtml = () => {
