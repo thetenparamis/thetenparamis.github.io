@@ -77,13 +77,13 @@ class App extends Component {
             <h1>HTML Email Creator</h1>
 
             <label htmlFor="load">Cargar Plantilla: </label>
-            <input type="file" onChange={(e) => this.loadFile(e)} name="load" id="load"/>
-            
+            <input type="file" onChange={(e) => this.loadFile(e)} name="load" id="load" />
+
             <button onClick={this.saveDesign}>Descargar Plantilla</button>
             <button onClick={this.exportHtml}>Exportar HTML</button>
           </Bar>
 
-          <EmailEditor ref={editor => this.editor = editor} onLoad={this.onLoad} locale="es-ES"/>
+          <EmailEditor ref={editor => this.editor = editor} onLoad={this.onLoad} locale="es-ES" />
         </Container>
       </Router>
     );
@@ -95,12 +95,12 @@ class App extends Component {
 
   exportHtml = () => {
     this.editor.exportHtml(data => {
-      var { design, html } = data;
+      let { design, html } = data;
 
-      html = util.convertAccentsToHTMLEntities(html);
+      html = util.htmlPostProcessing(html);
 
       const element = document.createElement("a");
-      const file = new Blob([html], {type: 'html/plain'});
+      const file = new Blob([html], { type: 'html/plain' });
       element.href = URL.createObjectURL(file);
       element.download = "boletin_" + new Date().toISOString() + ".html";
       document.body.appendChild(element); // Required for this to work in FireFox
@@ -111,7 +111,7 @@ class App extends Component {
   loadFile = async (e) => {
     e.preventDefault()
     const reader = new FileReader()
-    reader.onload = async (e) => { 
+    reader.onload = async (e) => {
       const text = (e.target.result)
       this.editor.loadDesign(JSON.parse(text));
     };
@@ -121,7 +121,7 @@ class App extends Component {
   saveDesign = () => {
     this.editor.saveDesign(design => {
       const element = document.createElement("a");
-      const file = new Blob([JSON.stringify(design)], {type: 'json/plain'});
+      const file = new Blob([JSON.stringify(design)], { type: 'json/plain' });
       element.href = URL.createObjectURL(file);
       element.download = "boletin_design_" + new Date().toISOString() + ".json";
       document.body.appendChild(element); // Required for this to work in FireFox
