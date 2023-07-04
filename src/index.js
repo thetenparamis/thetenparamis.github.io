@@ -4,6 +4,7 @@ import styled, { createGlobalStyle } from 'styled-components';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import EmailEditor from 'react-email-editor'
 import template from './template.json';
+import * as util from './util';
 
 const GlobalStyle = createGlobalStyle`
   html, body {
@@ -94,7 +95,10 @@ class App extends Component {
 
   exportHtml = () => {
     this.editor.exportHtml(data => {
-      const { design, html } = data
+      var { design, html } = data;
+
+      html = util.convertAccentsToHTMLEntities(html);
+
       const element = document.createElement("a");
       const file = new Blob([html], {type: 'html/plain'});
       element.href = URL.createObjectURL(file);
