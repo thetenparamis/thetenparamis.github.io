@@ -26,7 +26,7 @@ npm run start
 ```
 
 ### Publish app to GitHub Pages
-Latest chages will be published on https://thetenparamis.github.io/
+Latest chages will be published on https://thetenparamis.github.io/. Commit and push all changes before running the following command
 ```
 npm run deploy
 ```
