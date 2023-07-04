@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import EmailEditor from 'react-email-editor'
 import template from './template.json';
 import * as util from './util';
+import packageJson from '../package.json';
 
 const GlobalStyle = createGlobalStyle`
   html, body {
@@ -74,7 +75,7 @@ class App extends Component {
 
         <Container>
           <Bar>
-            <h1>HTML Email Creator</h1>
+            <h1>HTML Email Creator v{packageJson.version}</h1>
 
             <label htmlFor="load">Cargar Plantilla: </label>
             <input type="file" onChange={(e) => this.loadFile(e)} name="load" id="load" />
