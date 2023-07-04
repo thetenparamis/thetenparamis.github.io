@@ -1,6 +1,6 @@
 {
     "name": "html_email_creator",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "private": true,
     "homepage": "https://thetenparamis.github.io/",
     "dependencies": {
@@ -21,7 +21,7 @@
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
-        "predeploy": "npx auto-version && git add ./package.json && git commit -m 'minor version bump' && npm run build",
+        "predeploy": "npx auto-version && git add ./package.json && git commit -m 'minor version bump' && git push origin main && npm run build",
         "deploy": ""
     },
     "eslintConfig": {
