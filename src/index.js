@@ -2,7 +2,7 @@ import React, { Component, useRef } from 'react';
 import ReactDOM from 'react-dom';
 import styled, { createGlobalStyle } from 'styled-components';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import EmailEditor from 'react-email-editor'
+import EmailEditor from 'react-email-editor';
 import template from './template.json';
 import * as util from './util';
 import packageJson from '../package.json';
@@ -66,6 +66,98 @@ const Bar = styled.div`
   }
 `;
 
+const options = {
+  features: {
+    textEditor: {
+      tables: false,
+      emojis: false,
+    },
+  },
+  appearance: {
+    theme: 'light',
+    panels: {
+      tools: {
+        dock: 'right'
+      }
+    }
+  },
+  tabs: {
+    content: {
+      enabled: true,
+    },
+    blocks: {
+      enabled: true,
+    },
+    body: {
+      enabled: true,
+    }
+  },
+  tools: {
+    heading: {
+      properties: {
+        textAlign: {
+          value: 'right'
+        },
+        color: {
+          value: '#F39999'
+        }
+      }
+    },
+    text: {
+      properties: {
+        text: {
+          value: 'Texto'
+        }
+      }
+    },
+    button: {
+      properties: {
+        fontWeight: {
+          value: 700 //700 equivale a 'Fuerte'
+        },
+        buttonColors: {
+          value: {
+            color: '#FFFFFF',
+            backgroundColor: '#348eda'
+          }
+        },
+        text: {
+          value: 'Texto'
+        }
+      }
+    },
+    divider: {
+      properties: {
+        border: {
+          value: {
+            borderTopWidth: '1px',
+            borderTopColor: '#EEC727'
+          }
+        }
+      }
+    },
+    heading: {
+      properties: {
+        headingType: {
+          value: 'h1',
+        },
+        fontSize: {
+          value: '24px'
+        },
+        fontWeight: {
+          value: 700 //700 equivale a 'Fuerte'
+        },
+        color: {
+          value: '#666600'
+        },
+        text: {
+          value: 'Texto'
+        }
+      }
+    }
+  }
+};
+
 class App extends Component {
 
   render() {
@@ -84,13 +176,17 @@ class App extends Component {
             <button onClick={this.exportHtml}>Exportar HTML</button>
           </Bar>
 
-          <EmailEditor ref={editor => this.editor = editor} onLoad={this.onLoad} locale="es-ES" />
+          <EmailEditor
+            ref={editor => this.editor = editor}
+            onReady={this.onReady}
+            locale="es-ES"
+            options={options} />
         </Container>
       </Router>
     );
   }
 
-  onLoad = () => {
+  onReady = () => {
     this.editor.loadDesign(template)
   }
 
