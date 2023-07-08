@@ -69,9 +69,10 @@ const Bar = styled.div`
 const options = {
   features: {
     textEditor: {
-      tables: false,
+      tables: true,
       emojis: false,
     },
+    pageAnchors: true
   },
   appearance: {
     theme: 'light',
