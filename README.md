@@ -44,3 +44,5 @@ npm run deploy
 - [ ] Guardar plantilla en la nube
 - [ ] Al exportar el HTML, preguntar el nombre del archivo en un pop-up.
 - [ ] Al descargar la plantilla, preguntar el nombre del archivo en un pop-up.
+- [ ] Mostrar un alerta cuando el html supere los 100kb [(email clipping)](https://www.linkedin.com/pulse/maximize-effectiveness-through-email-file-size-mastery-m%C3%BCcahit-m%C4%B1hc%C4%B1/)
+- [ ] [Minify](https://www.emailonacid.com/blog/article/email-development/how-to-minify-email-html/) el html al exportarlo
