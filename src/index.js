@@ -168,7 +168,7 @@ class App extends Component {
 
         <Container>
           <Bar>
-            <h1>HTML Email Creator v{packageJson.version}</h1>
+            <h1>Editor de Boletines v{packageJson.version}</h1>
 
             <label htmlFor="load">Cargar Plantilla: </label>
             <input type="file" onChange={(e) => this.loadFile(e)} name="load" id="load" />
@@ -188,7 +188,13 @@ class App extends Component {
   }
 
   onReady = () => {
-    this.editor.loadDesign(template)
+    this.editor.addEventListener('previewHtml', function (params, done) {
+      done({
+        html: util.htmlPostProcessing(params.html)
+      });
+    });
+
+    this.editor.loadDesign(template);
   }
 
   exportHtml = () => {
