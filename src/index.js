@@ -6,6 +6,7 @@ import EmailEditor from 'react-email-editor';
 import template from './template.json';
 import * as util from './util';
 import packageJson from '../package.json';
+import FileUloader from './fileUploader'
 
 const GlobalStyle = createGlobalStyle`
   html, body {
@@ -48,7 +49,7 @@ const Bar = styled.div`
     background-color: #000;
     color: #fff;
     border: 0px;
-    max-width: 150px;
+    max-width: 160px;
     cursor: pointer;
   }
   a {
@@ -169,9 +170,8 @@ class App extends Component {
         <Container>
           <Bar>
             <h1>Editor de Boletines v{packageJson.version}</h1>
-
-            <label htmlFor="load">Cargar Plantilla: </label>
-            <input type="file" onChange={(e) => this.loadFile(e)} name="load" id="load" />
+            
+            <FileUloader handleFile={file => this.loadFile(file)} label="Cargar Plantilla"/>
 
             <button onClick={this.saveDesign}>Descargar Plantilla</button>
             <button onClick={this.exportHtml}>Exportar HTML</button>
@@ -212,14 +212,13 @@ class App extends Component {
     })
   }
 
-  loadFile = async (e) => {
-    e.preventDefault()
-    const reader = new FileReader()
-    reader.onload = async (e) => {
-      const text = (e.target.result)
+  loadFile = (file) => {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      const text = (e.target.result);
       this.editor.loadDesign(JSON.parse(text));
     };
-    reader.readAsText(e.target.files[0])
+    reader.readAsText(file);
   }
 
   saveDesign = () => {
