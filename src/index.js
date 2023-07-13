@@ -6,7 +6,8 @@ import EmailEditor from 'react-email-editor';
 import template from './template.json';
 import * as util from './util';
 import packageJson from '../package.json';
-import FileUloader from './fileUploader'
+import FileUloader from './fileUploader';
+import moment from 'moment';
 
 const GlobalStyle = createGlobalStyle`
   html, body {
@@ -206,7 +207,8 @@ class App extends Component {
       const element = document.createElement("a");
       const file = new Blob([html], { type: 'html/plain' });
       element.href = URL.createObjectURL(file);
-      element.download = "boletin_" + new Date().toISOString() + ".html";
+      element.download = "boletin_" + moment().format('YYYY-MM-DD_HH-mm-ss') + ".html";
+
       document.body.appendChild(element); // Required for this to work in FireFox
       element.click();
     })
