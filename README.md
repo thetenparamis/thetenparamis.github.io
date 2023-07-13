@@ -1,37 +1,42 @@
-# HTML Email Creator
-This project is based on the [react-email-editor project](https://github.com/unlayer/react-email-editor)
-## Basic workflows
+# Editor de boletines
+Este proyecto está basado en el proyecto [react-email-editor](https://github.com/unlayer/react-email-editor)
+## Flujo de desarrollo básico
 
-### Preconditions
+### Precondiciones
 
 - npm version: 9.7
 - node version: 16.20
+- git
 
-### Local instalation
+### Instalación local
 
-- Checkout the project:
+- Clonar el proyecto localmente:
 ```
 git clone git@github.com:thetenparamis/thetenparamis.github.io.git 
 ```
-- Install Node.JS packages:
+- Instalar los paquetes de Node.JS:
 ```
 cd thetenparamis.github.io
 npm install --package-lock 
 ```
 
-### Start a local html server
-For local development, run a local html server as follow:
+### Correr un servidor HTML local
+Durante el desarrollo, correr el servidor HTML localmente
 ```
 npm run start
 ```
 
-### Publish app to GitHub Pages
-Latest chages will be published on https://thetenparamis.github.io/. Commit and push all changes before running the following command
+### Publicar la app en GitHub Pages
+Los últimos cambios (en el repo de github) se publican en https://thetenparamis.github.io/. Al correr el comando, se autoincrementa en 1 la versión menor.
 ```
 npm run deploy
 ```
 
-## Useful articles
+## Documentación
+### Minificar (minify) el HTML
+EmailEditor tiene la funcionalidad de [minificar](https://docs.unlayer.com/docs/export-html#minify) el HTML. Pero basado en [este articulo](https://www.emailonacid.com/blog/article/email-development/), se decidió utilizar la librería html-crush porque mantiene lineas de texto en 500 caracteres como máximo.
+
+## Artículos útiles
 
 - [Deploying React apps to GitHub Pages](https://blog.logrocket.com/deploying-react-apps-github-pages/#what-is-github-pages)
 - [Guía para usar Github-Pages](https://platzi.com/tutoriales/1548-react-2019/4065-guia-para-usar-github-pages-en-tus-proyectos-de-reactjs/)
