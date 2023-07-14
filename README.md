@@ -17,6 +17,7 @@ git clone git@github.com:thetenparamis/thetenparamis.github.io.git
 - Instalar los paquetes de Node.JS:
 ```
 cd thetenparamis.github.io
+nvm install 16
 npm install --package-lock 
 ```
 
