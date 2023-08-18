@@ -175,7 +175,7 @@ class App extends Component {
             <FileUloader handleFile={file => this.loadFile(file)} label="Cargar Plantilla"/>
 
             <button onClick={this.saveDesign}>Descargar Plantilla</button>
-            <button onClick={this.exportHtml}>Exportar HTML</button>
+            <button onClick={this.exportHtml}>Exportar a HTML</button>
           </Bar>
 
           <EmailEditor
