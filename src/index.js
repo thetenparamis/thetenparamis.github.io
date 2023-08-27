@@ -96,16 +96,6 @@ const options = {
     }
   },
   tools: {
-    heading: {
-      properties: {
-        textAlign: {
-          value: 'right'
-        },
-        color: {
-          value: '#F39999'
-        }
-      }
-    },
     text: {
       properties: {
         text: {
