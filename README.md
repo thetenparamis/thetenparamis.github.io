@@ -37,6 +37,10 @@ npm run deploy
 ### Minificar (minify) el HTML
 EmailEditor tiene la funcionalidad de [minificar](https://docs.unlayer.com/docs/export-html#minify) el HTML. Pero basado en [este articulo](https://www.emailonacid.com/blog/article/email-development/), se decidió utilizar la librería html-crush porque mantiene lineas de texto en 500 caracteres como máximo.
 
+### Tabla de Contenidos
+La tabla de contenidos es generada a partir de los &lt;h1&gt; presentes en el documento. Para evitar que un encabezado vaya a parar a la tabla de contenidos, darle un nombre de `ignorar*` (el editor permite darle un nombre a los elementos en "Nombre de seccion"). Como no puede haber elementos con el mismo nombre, usar `ignorar1`, `ignorar2`, etc.
+
+
 ## Artículos útiles
 
 - [Deploying React apps to GitHub Pages](https://blog.logrocket.com/deploying-react-apps-github-pages/#what-is-github-pages)
@@ -46,7 +50,7 @@ EmailEditor tiene la funcionalidad de [minificar](https://docs.unlayer.com/docs/
 
 ## ToDo
 - [ ] Enlinear la clase css 'highlight'
-- [ ] Crear la tabla de contenido dinámicamente basado en el tag H1
+- [x] Crear la tabla de contenido dinámicamente basado en el tag H1
 - [ ] Guardar plantilla en la nube
 - [ ] Al exportar el HTML, preguntar el nombre del archivo en un pop-up.
 - [ ] Al descargar la plantilla, preguntar el nombre del archivo en un pop-up.
