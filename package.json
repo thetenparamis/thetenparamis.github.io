@@ -11,6 +11,7 @@
         "firebase": "^10.0.0",
         "html-crush": "^6.0.13",
         "html-entities": "^2.4.0",
+        "juice": "^9.1.0",
         "moment": "^2.29.4",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
