@@ -22,6 +22,11 @@ const generateTOC = (html) => {
     div.innerHTML = html;
 
     let menu = div.querySelector('.menu');
+
+    if (! menu) {
+        alert('No se encontró un menú donde insertar la tabla de contenidos.');
+        return html;
+    }
     menu.style.textAlign = 'left';
     let headers = div.querySelectorAll('h1');
 
