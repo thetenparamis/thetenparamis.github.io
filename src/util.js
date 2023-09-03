@@ -21,8 +21,8 @@ const minifyHTML = (html) => {
 
 const convertCustomTagsToHTMLTags = (html) => {
   const mapping = {
-    '[resaltado#]': '<span class="highlight">',
-    '[#resaltado]': '</span>'
+    '[resaltado#]': '<div class="highlight">',
+    '[#resaltado]': '</div>'
   };
 
   Object.entries(mapping).forEach(entry => {
@@ -88,6 +88,7 @@ const customCss = `
   padding: .25rem;
   border-radius: 6px;
   border: 1px solid #dd0;
+  display: inline-block;
 }
 
 .toc {
