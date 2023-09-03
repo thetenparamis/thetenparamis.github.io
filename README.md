@@ -49,7 +49,7 @@ La tabla de contenidos es generada a partir de los &lt;h1&gt; presentes en el do
 - [App's favicon and logo](https://icons8.com/icons/set/newsletter)
 
 ## ToDo
-- [ ] Enlinear la clase css 'highlight'
+- [x] Enlinear la clase css 'highlight'
 - [x] Crear la tabla de contenido dinámicamente basado en el tag H1
 - [ ] Guardar plantilla en la nube
 - [ ] Al exportar el HTML, preguntar el nombre del archivo en un pop-up.
