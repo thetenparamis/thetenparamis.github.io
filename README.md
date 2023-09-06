@@ -51,7 +51,7 @@ Para evitar que un encabezado vaya a parar a la tabla de contenidos, darle un no
 - [App's favicon and logo](https://icons8.com/icons/set/newsletter)
 
 ## ToDo
-- [ ] Enlinear la clase css 'highlight'
+- [x] Enlinear la clase css 'highlight'
 - [x] Crear la tabla de contenido dinámicamente basado en el tag H1
 - [ ] Guardar plantilla en la nube
 - [ ] Al exportar el HTML, preguntar el nombre del archivo en un pop-up.
