@@ -121,4 +121,12 @@
  * @license MIT
  */
 
+/**
+ * Returns an array of the selectors.
+ *
+ * @license Sizzle CSS Selector Engine - MIT
+ * @param {String} selectorText from mensch
+ * @api public
+ */
+
 //! moment.js
