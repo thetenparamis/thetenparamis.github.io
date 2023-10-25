@@ -64,7 +64,7 @@ const generateTOC = (html) => {
     if (ignore && header.compareDocumentPosition(ignore) === 2) {
       ignore.remove();
     } else {
-      let href = header.innerText.replaceAll(' ', '-').toLowerCase();
+      let href = header.innerText.replaceAll(/\s/g, '-').toLowerCase();
       let text = (i) + '. ' + header.innerHTML;
       i++;
       menu.appendChild(createAnchorEl(href, text));
@@ -79,8 +79,24 @@ const createAnchorEl = (href, text) => {
   let a = document.createElement('a');
   a.href = `#${href}`;
   a.innerHTML = text;
+  console.log(a);
+  a.firstElementChild && inlineChildren(a.firstElementChild);
   a.className = 'toc';
   return a;
+}
+
+/**
+ * Adds `display: inline` to all children of a given node recursively
+ * @param node HTMLelement
+ */
+const inlineChildren = (node) => {
+  if (node.children.length) {
+      Array.from(node.children).forEach(child => {
+        inlineChildren(child);
+      })
+  }
+  
+  node.style.display = 'inline';
 }
 
 const escapeRegExp = (string) => {
